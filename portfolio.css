@@ -1,0 +1,92 @@
+/* ======================================================== */
+/* Adam’s LeuStyle - Fichier CSS Officiel (style.css)        */
+/* ======================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #f59e0b;
+  --color-gold-600: #d97706;
+  --color-bg-dark: #0b0d11;
+  --color-card-dark: #12151c;
+}
+
+body {
+  background-color: var(--color-bg-dark);
+  color: #f3f4f6;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', Georgia, serif;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* 1. Arrière-plan avec photo de marque LeuStyle en filigrane */
+.brand-backdrop {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.brand-backdrop-blur {
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/aistudio/IMG_4530_cff811ff.jpeg');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.1);
+  filter: blur(35px);
+  opacity: 0.18;
+  mix-blend-mode: screen;
+}
+
+.brand-backdrop-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #0b0d11, rgba(11, 13, 17, 0.85), rgba(11, 13, 17, 0.65));
+}
+
+.brand-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  border-radius: 9999px;
+  opacity: 0.035;
+  background-image: url('/assets/aistudio/IMG_4530_cff811ff.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* 2. Barre de défilement dorée */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0d11;
+}
+::-webkit-scrollbar-thumb {
+  background: #232733;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-500);
+}
+
+/* 3. Effets de lueur dorée pour boutons et cartes */
+.gold-glow {
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.2);
+}
+.gold-glow:hover {
+  box-shadow: 0 0 35px rgba(245, 158, 11, 0.35);
+}
